@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Puzzle Game</title>
+        <script src="./javascript.js" type="javascript"></script>
+        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="Signup.html">
+
+
+
+    </head>
+<body>
+<div id="sign-up-form">
+  <h1>Login Now</h1>
+  <form> 
+    <input type="email" placeholder="Enter your email" class="login-email">
+    <input type="password" placeholder="Enter your password" class="login-password"><br><br>
+    <button class="login" >Login</button><br>
+   </form>
+   <p>or</p>
+   <button onclick="signup()">New User register</button>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+     function validate(){
+     let email = document.querySelector(".login-email");
+      let password = document.querySelector(".login-password");
+      let btn = document.querySelector(".login");
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if ( email.value == "" || password.value == "") {
+          emptyerror();
+        }   
+        else
+        {
+            
+         
+             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if(email.value.match(mailformat))
+                    {
+                        const loginEmail = email.value;
+    const loginPass = password.value;
+    if (localStorage.getItem(email.value)) {
+        const loginDeets = JSON.parse(localStorage.getItem(email.value));
+        if (loginEmail == email.value && loginPass == loginDeets.password) {
+            window.location.href='Puzzleindex.html';
+        } 
+        
+        
+    } 
+    else {
+       error();
+    }
+}             
+                    else
+                    {
+                        alert("You have entered an invalid email address!");
+                        
+                        return false;
+                    }
+         }
+
+            
+          
+      });
+     }
+    
+    validate();
+
+    
+    function emptyerror() {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Fields cannot be empty!",
+      });
+    }
+
+    function error() {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "You need to sign in First!",
+      });
+    }
+    function signup(){
+      location.href='Signup.html';
+    }
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

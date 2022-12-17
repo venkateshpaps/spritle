@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+</head>
+<body>
+    <h1>User Details</h1>
+   
+    <label>Upload you photo:&nbsp;<input type="file" id="fileinput"></label><br><br>
+    <label>Data of Birth:&nbsp;<input type="date" id="dob"></label><br><br>
+    <label>Address:<br><textarea id="adres"></textarea></label><br><br>
+    <label>Phone no:&nbsp;<input type="text" id="ph" maxlength="10"></label><br><br>
+    <button id="submit">submit</button>
+    
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+     
+        const btn=document.getElementById("submit");
+        var addre=document.getElementById("adres");
+        var ph=document.getElementById("ph");
+        const date=document.getElementById("dob");
+        var i=0;
+      function Details(){
+         btn.addEventListener("click",(e)=>{ 
+            
+            const userData = {
+        DOB:date.value,
+        address:addre.value,
+        phno: ph.value
+    };
+    
+
+        localStorage.setItem(ph.value,JSON.stringify(userData));
+        window.location.href='index.html';
+
+    });
+}
+Details();
+    const reader=new FileReader();
+            const file=document.getElementById('fileinput');
+            file.addEventListener("change",function(){
+
+            reader.addEventListener('load',() =>{
+             
+                localStorage.setItem(file.value,reader.result);
+                
+            });
+            reader.readAsDataURL(this.files[0]);
+        });
+        function error() {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
+    }
+    </script>
+    
+</body>
+</html>

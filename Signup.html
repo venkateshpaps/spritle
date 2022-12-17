@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Signup Page</title>
+        <link rel="stylesheet" href="signup.css">
+
+
+
+    </head>
+<body>
+  <h1>Sign Up Now</h1>
+    <div>
+        <input type="email" placeholder="Enter your email" class="email">
+        <input type="password" placeholder="Enter your password" class="password">
+        <button class="signup">Sign Up</button>
+        <a href="index.html">Already rigester Click Here?</a>
+    </div>
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+  ></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script type="text/javascript">
+   
+
+    (function () {
+     
+      emailjs.init("BIoLYEo_fWh2BovfX");
+    })();
+
+  
+
+    function validate() {
+     
+      let email = document.querySelector(".email");
+      let password = document.querySelector(".password");
+      let btn = document.querySelector(".signup");
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if ( email.value == "" || password.value == "") {
+          emptyerror();
+        }   
+        else
+        {
+            
+         
+             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if(email.value.match(mailformat))
+                    {
+                       window.location.href='userdetails.html';
+                       sendmail();  
+                       success();
+                    }
+                    else
+                    {
+                        alert("You have entered an invalid email address!");
+                        
+                        return false;
+                    }
+                }
+                
+                const userData = {
+        password: password.value
+    };
+    
+    localStorage.setItem(email.value, JSON.stringify(userData));
+            
+          
+      });
+    }
+    validate();
+ 
+
+    
+
+    function sendmail() {
+      emailjs.send("service_l5n2nfh","template_6q3uu2f", {
+        to_name: "Barath",
+        from_name: "Gowtham",
+        message1:"Gowtham",
+        message: "how are you",
+      });
+    }
+
+    function emptyerror() {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Fields cannot be empty!",
+      });
+    }
+
+    function error() {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
+    }
+
+    function success() {
+      Swal.fire({
+        icon: "success",
+        title: "Success...",
+        text: "Successfully sent message",
+      });
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
