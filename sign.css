@@ -10,7 +10,7 @@ body{
     margin: 0;
     padding: 0;
     background-image: url(images/bg4.jfif);
-    background-size: cover;
+    background-size: auto;
     background-repeat: no-repeat;
 
 }
