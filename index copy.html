@@ -5,20 +5,22 @@
         <script src="./javascript.js" type="javascript"></script>
         <link rel="stylesheet" href="login.css">
         <link rel="stylesheet" href="Signup.html">
-
+        <meta http-equiv="refresh">
 
 
     </head>
 <body>
 <div id="sign-up-form">
+  <img src="images/user-icon.png"> 
   <h1>Login Now</h1>
   <form> 
-    <input type="email" placeholder="Enter your email" class="login-email">
-    <input type="password" placeholder="Enter your password" class="login-password"><br><br>
+    <label>Enter your email:
+      <input type="email" placeholder="Enter your email" class="login-email"></label>
+    <label>Enter the password:</label><input type="password" placeholder="Enter your password" class="login-password"><br><br>
     <button class="login" >Login</button><br>
-   </form>
-   <p>or</p>
-   <button onclick="signup()">New User register</button>
+   </form><hr>
+   <p class="or">OR</p>
+   <button onclick="signup()" class="sign">Signup Now</button>
 </div>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>

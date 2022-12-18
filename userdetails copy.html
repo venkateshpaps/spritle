@@ -5,36 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Details</title>
+    <link rel="stylesheet" href="user.css">
+
 </head>
 <body>
+    <div class="sign-up-form">
     <h1>User Details</h1>
-   
-    <label>Upload you photo:&nbsp;<input type="file" id="fileinput"></label><br><br>
+    <form>
+    <label>Upload you photo:&nbsp;<input type="file" id="fileinput" accept="image/*"></label><br><br>
     <label>Data of Birth:&nbsp;<input type="date" id="dob"></label><br><br>
-    <label>Address:<br><textarea id="adres"></textarea></label><br><br>
-    <label>Phone no:&nbsp;<input type="text" id="ph" maxlength="10"></label><br><br>
-    <button id="submit">submit</button>
+    <label>Address:<br><address><input type="text" class="address" placeholder="Door no & street name">
+    <input type="text" class="Flat" placeholder="Flat name">
+    <input type="text" class="City" placeholder="City name"><input type="text" class="pincode" placeholder="pincode" maxlength="6"></address></label><br><br>
+    <label>Phone no:&nbsp;<input type="text" placeholder="Enter your number" id="ph" maxlength="10"></label><br><br>
+    </form>
+    <button id="submit">submit</button></div>
     
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
      
         const btn=document.getElementById("submit");
-        var addre=document.getElementById("adres");
+        var addre=document.querySelector(".address");
+        var Flat=document.querySelector(".Flat");
+        var City=document.querySelector(".City");
+        var pincode=document.querySelector(".pincode");
         var ph=document.getElementById("ph");
         const date=document.getElementById("dob");
-        var i=0;
       function Details(){
          btn.addEventListener("click",(e)=>{ 
             
             const userData = {
         DOB:date.value,
-        address:addre.value,
+        address:[addre.value,Flat.value,City.value,pincode.value],
         phno: ph.value
     };
     
-
+    if(addre.value==""|| City.value==""||pincode.value==""||ph.value==""||date.value==""){
+        emptyerror();}
+        else{
         localStorage.setItem(ph.value,JSON.stringify(userData));
-        window.location.href='index.html';
+        window.location.href='index.html';}
 
     });
 }
@@ -50,11 +60,11 @@ Details();
             });
             reader.readAsDataURL(this.files[0]);
         });
-        function error() {
+        function emptyerror() {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Something went wrong!",
+        text: "Fields cannot be empty!",
       });
     }
     </script>

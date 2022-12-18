@@ -1,0 +1,51 @@
+.sign-up-form{
+    width: 300px;
+    background: transparent;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.962);
+    margin:1% auto 0;
+    text-align: center;
+    padding: 15px;
+   }
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("images/bg3.jfif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: visible;
+}
+#fileinput,#adres,#dob,#ph,.address,.Flat,.City,.pincode,address{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 90%;
+    border: 2px solid black;
+    outline: none;
+    background: transparent;
+}
+button{
+    color:#fff;
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+#submit{
+    background-color: #21afde;
+}
+
+img{
+    width: 70px;
+    background: transparent;
+}
+h1{
+    color: rgb(51, 76, 144);
+}
+::placeholder{
+    color: black;
+}
