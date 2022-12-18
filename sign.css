@@ -9,9 +9,8 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url(images/bg4.jfif);
-    background-size: cover;
-    height: 300px;
+   
+    background-color:rgba(54, 192, 224, 0.759)
  
 
 }
@@ -57,7 +56,7 @@ h1{
     color: rgb(34, 168, 86);
 }
 a{
-    color: lightgreen;
+    color: rgb(0, 0, 0);
 }
 ::placeholder{
     color: black;
