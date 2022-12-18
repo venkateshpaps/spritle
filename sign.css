@@ -9,7 +9,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url(images/bg2.jfif);
+    background-image: url(images/bg4.jfif);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -54,4 +54,7 @@ img{
 }
 h1{
     color: rgb(34, 168, 86);
+}
+a{
+    color: lightgreen;
 }
