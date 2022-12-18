@@ -11,8 +11,8 @@ body{
     padding: 0;
     background-image: url("images/bg.jpg");
     background-size: cover;
-    width: 300px;
-    height: 300px;
+   
+    
 }
 .login-email,.login-password{
     border-radius: 20px;
@@ -46,9 +46,9 @@ hr{
 
 }
 .or{
-    background:blue;
+    background:transparent;
     width:30px;
-    margin: -19px auto 10px;
+    margin: -25px auto 10px;
 }
 img{
     width: 70px;
