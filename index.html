@@ -3,7 +3,7 @@
     <head>
         <title>Puzzle Game</title>
         <script src="./javascript.js" type="javascript"></script>
-        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="login copy.css">
         <link rel="stylesheet" href="Signup.html">
         <meta http-equiv="refresh">
 
@@ -46,7 +46,7 @@
     if (localStorage.getItem(email.value)) {
         const loginDeets = JSON.parse(localStorage.getItem(email.value));
         if (loginEmail == email.value && loginPass == loginDeets.password) {
-            window.location.href='Puzzleindex.html';
+            window.location.href='Puzzleindex copy.html';
         } 
         
         
@@ -87,7 +87,7 @@
       });
     }
     function signup(){
-      location.href='Signup.html';
+      location.href='Signup copy.html';
     }
 
 </script>
