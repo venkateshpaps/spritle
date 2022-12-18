@@ -10,7 +10,7 @@ body{
     margin: 0;
     padding: 0;
     background-image: url("images/bg.jpg");
-    background-size: auto;
+    background-size: cover;
 }
 .login-email,.login-password{
     border-radius: 20px;
