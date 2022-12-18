@@ -1,4 +1,4 @@
-
+/* This section is used by the fifteen game. */
 #table{
   width: auto;
   margin-left: auto;
@@ -15,7 +15,6 @@
   color: #000;
   cursor: pointer;
 }
-
 
 #moves {
   border: 2px solid #222;
@@ -52,7 +51,3 @@ table {
   margin-right: auto;
   width: 80%;
 }
- 
-
-
-

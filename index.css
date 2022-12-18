@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("images/bg.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+#login-form {
+  width: 300px;
+  background: white;
+  box-shadow: 0 0 3px 0 rgb(0, 0, 0);
+  margin: 8% auto 0;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+}
+.login-email,
+.login-password {
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 90%;
+  border: 1px solid black;
+  outline: none;
+  background: transparent;
+}
+button {
+  color: #fff;
+  width: 90%;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.login {
+  background: #1c8adb;
+}
+.sign {
+  background-color: #21afde;
+}
+.or {
+  margin: 0;
+}
+img {
+  width: 70px;
+  background: transparent;
+}
+h1 {
+  color: darkslategrey;
+}

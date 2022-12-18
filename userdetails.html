@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Details</title>
+    <link rel="stylesheet" href="userdetails.css" />
+  </head>
+  <body>
+    <div class="user-form">
+      <h1>User Details</h1>
+      <form>
+        <label
+          >Upload you photo:&nbsp;<input
+            type="file"
+            id="fileinput"
+            accept="image/*" /></label
+        ><br /><br />
+        <label>Data of Birth:&nbsp;<input type="date" id="dob" /></label
+        ><br /><br />
+        <label
+          >Address:<br />
+          <address>
+            <input
+              type="text"
+              class="address"
+              placeholder="Door no & street name"
+            />
+            <input type="text" class="Flat" placeholder="Flat name" />
+            <input type="text" class="City" placeholder="City name" /><input
+              type="text"
+              class="pincode"
+              placeholder="pincode"
+              maxlength="6"
+            /></address></label
+        ><br /><br />
+        <label
+          >Phone no:&nbsp;<input
+            type="text"
+            placeholder="Enter your number"
+            id="ph"
+            maxlength="10" /></label
+        ><br /><br />
+      </form>
+      <button id="submit">submit</button>
+    </div>
+    <script>
+      const btn = document.getElementById("submit");
+      var addre = document.querySelector(".address");
+      var Flat = document.querySelector(".Flat");
+      var City = document.querySelector(".City");
+      var pincode = document.querySelector(".pincode");
+      var ph = document.getElementById("ph");
+      const date = document.getElementById("dob");
+      const file = document.getElementById("fileinput");
+      function Details() {
+        btn.addEventListener("click", (e) => {
+          const userData = {
+            DOB: date.value,
+            address: [addre.value, Flat.value, City.value, pincode.value],
+            phno: ph.value,
+          };
+
+          if (
+            addre.value == "" ||
+            City.value == "" ||
+            pincode.value == "" ||
+            ph.value == "" ||
+            date.value == "" ||
+            file.files.length == 0
+          ) {
+            alert("Fields cannot be empty!");
+          } else {
+            fileUpload();
+            localStorage.setItem(ph.value, JSON.stringify(userData));
+            window.location.href = "index.html";
+          }
+        });
+      }
+      Details();
+      function fileUpload() {
+        const reader = new FileReader();
+
+        file.addEventListener("change", function () {
+          reader.addEventListener("load", () => {
+            localStorage.setItem(file.value, reader.result);
+          });
+          reader.readAsDataURL(this.files[0]);
+        });
+      }
+    </script>
+  </body>
+</html>

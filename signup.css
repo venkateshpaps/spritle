@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(54, 192, 224, 0.759);
+}
+.sign-up-form {
+  width: 300px;
+  background: white;
+  box-shadow: 0 0 3px 0 rgb(0, 0, 0, 0.3);
+  margin: 9% auto 0;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid green;
+  border-radius: 12px;
+}
+.email,
+.password {
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 90%;
+  border: 2px solid black;
+  outline: none;
+  background: transparent;
+}
+button {
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.signup {
+  background-color: lightcoral;
+}
+hr {
+  margin-top: 20px;
+  width: 80%;
+}
+.or {
+  background: lightgreen;
+  width: 30px;
+  margin: -19px auto 10px;
+}
+img {
+  width: 70px;
+}
+h1 {
+  color: rgb(34, 168, 86);
+}
+a {
+  color: rgb(0, 0, 0);
+}
+::placeholder {
+  color: black;
+}

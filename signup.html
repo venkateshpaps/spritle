@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="signup.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="sign-up-form">
+      <img src="images/user-icon.png" alt="" />
+
+      <h1>Sign Up Now</h1>
+      <form>
+        <input type="email" placeholder="Enter your email" class="email" />
+        <input
+          type="password"
+          placeholder="Enter your password"
+          class="password"
+        />
+
+        <button class="signup">Sign Up</button>
+        <hr />
+        <p class="or">OR</p>
+        <a href="index.html">Already rigester Click Here?</a>
+      </form>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("BIoLYEo_fWh2BovfX");
+      })();
+
+      function validate() {
+        let email = document.querySelector(".email");
+        let password = document.querySelector(".password");
+        let btn = document.querySelector(".signup");
+
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (email.value == "" || password.value == "") {
+            alert("Fields cannot be empty!");
+          } else {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (email.value.match(mailformat)) {
+              window.location.href = "userdetails.html";
+              sendmail();
+              alert("Signed in successfully!!!");
+            } else {
+              alert("You have entered an invalid email address!");
+
+              return false;
+            }
+          }
+          const userData = {
+            password: password.value,
+          };
+
+          localStorage.setItem(email.value, JSON.stringify(userData));
+        });
+      }
+      validate();
+      function sendmail() {
+        emailjs.send("service_l5n2nfh", "template_6q3uu2f", {
+          to_name: "Barath",
+          from_name: "Gowtham",
+          message1: "Gowtham",
+          message:
+            "Now Go to the Login page and Login with your credentials. And Enjoy the Game",
+        });
+      }
+    </script>
+  </body>
+</html>
