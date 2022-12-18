@@ -31,6 +31,7 @@
         var pincode=document.querySelector(".pincode");
         var ph=document.getElementById("ph");
         const date=document.getElementById("dob");
+        const file=document.getElementById('fileinput');
       function Details(){
          btn.addEventListener("click",(e)=>{ 
             
@@ -40,17 +41,20 @@
         phno: ph.value
     };
     
-    if(addre.value==""|| City.value==""||pincode.value==""||ph.value==""||date.value==""){
-        emptyerror();}
+    if(addre.value==""|| City.value==""||pincode.value==""||ph.value==""||date.value==""||file.files.length==0){
+        emptyerror();
+    }
         else{
+        fileUpload();
         localStorage.setItem(ph.value,JSON.stringify(userData));
         window.location.href='index.html';}
 
     });
 }
 Details();
+ function fileUpload(){
     const reader=new FileReader();
-            const file=document.getElementById('fileinput');
+           
             file.addEventListener("change",function(){
 
             reader.addEventListener('load',() =>{
@@ -59,7 +63,7 @@ Details();
                 
             });
             reader.readAsDataURL(this.files[0]);
-        });
+        });}
         function emptyerror() {
       Swal.fire({
         icon: "error",
